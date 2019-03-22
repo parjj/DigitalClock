@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="beige">#f9eec7</color>
+    <color name="brownish">#c4ad5e</color>
+    <color name="brick">#a84e28</color>
+    <color name="pinkish">#e2c9cb</color>
+    <color name="mustard">#f4ca41</color>
+
+    <!-- activity main colors-->
+    <color name="greenish">#d1f442</color>
+    <color name="flourescent">#f3f722</color>
+
+</resources>

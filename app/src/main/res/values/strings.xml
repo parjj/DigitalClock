@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ClockDigi</string>
+    <string name="color_select">color choice</string>
+    <string name="menu_settings">settings</string>
+    <string name="location_select">Location Select</string>
+    <string name="menuTime_24hr">24Hr</string>
+    <string name="asia_singapore">Asia/Singapore</string>
+    <string name="europe_london">Europe/London</string>
+    <string name="america_new_york">America/New_York</string>
+    <string name="color_choice">Color choice</string>
+    <string name="_12hr">12Hr</string>
+    <string name="location_time_zones">Location/Time Zones</string>
+    <string name="purple">Purple</string>
+    <string name="light_pink">Light Pink</string>
+    <string name="brick">Brick</string>
+    <string name="indian_mahe">Indian/Mahe</string>
+    <string name="beige">Beige</string>
+    <string name="brown">Brown</string>
+    <string name="mustard">Mustard</string>
+</resources>

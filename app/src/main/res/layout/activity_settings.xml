@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="right"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/locationID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="@string/location_time_zones"
+        android:textColor="@android:color/holo_blue_bright"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_marginTop="16dp"
+        android:choiceMode="singleChoice"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/locationID" />
+
+    <TextView
+        android:id="@+id/colorID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationID"
+        android:layout_marginTop="12dp"
+        android:gravity="center_horizontal"
+        android:text="@string/color_select"
+        android:textColor="@android:color/holo_blue_bright"
+        app:layout_constraintTop_toBottomOf="@+id/list" />
+
+    <LinearLayout
+        android:id="@+id/linelay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/colorID"
+        android:layout_margin="15dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@+id/colorID">
+
+        <Button
+            android:id="@+id/b1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="@color/pinkish"
+            android:text="@string/light_pink"
+            android:textColor="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/b2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="@color/brick"
+            android:text="@string/brick"
+            android:textColor="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/b3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="@color/brownish"
+            android:text="Brown"
+            android:textColor="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/b4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_background"
+            android:text="Beige"
+            android:backgroundTint="@color/beige"
+            android:textColor="@android:color/transparent" />
+
+
+        <Button
+            android:id="@+id/b5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/mustard"
+            android:background="@drawable/button_background"
+            android:text="Mustard"
+            android:textColor="@android:color/transparent" />
+
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/ampmMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:checked="false"
+        android:gravity="center_vertical"
+        android:onClick="switchCall"
+        android:text="@string/_12hr"
+        app:layout_constraintTop_toBottomOf="@+id/linelay" />
+</android.support.constraint.ConstraintLayout>

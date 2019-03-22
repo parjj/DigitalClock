@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <TextView
+        android:id="@+id/locationID"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="@string/location_time_zones"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_bright"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="187dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:choiceMode="singleChoice"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineB"
+        app:layout_constraintDimensionRatio="1:2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/colorID"
+        app:layout_constraintTop_toBottomOf="@+id/locationID"
+      />
+
+    <TextView
+        android:id="@+id/colorID"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="88dp"
+        android:padding="10dp"
+        android:text="@string/color_select"
+        android:textColor="@android:color/holo_blue_bright"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linelay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignBottom="@id/colorID"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/list"
+        app:layout_constraintTop_toBottomOf="@+id/colorID">
+
+        <Button
+            android:id="@+id/b1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="@color/pinkish"
+            android:text="@string/light_pink"
+            android:textColor="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/b2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="@color/brick"
+            android:text="@string/brick"
+            android:textColor="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/b3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="@color/brownish"
+            android:onClick="brownButton"
+            android:text="@string/brown"
+            android:textColor="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/b4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="@color/beige"
+            android:text="@string/beige"
+            android:textColor="@android:color/transparent" />
+
+
+        <Button
+            android:id="@+id/b5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="@color/mustard"
+            android:text="@string/mustard"
+            android:textColor="@android:color/transparent" />
+
+
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/ampmMode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:checked="false"
+        android:gravity="center_vertical"
+        android:onClick="switchCall"
+        android:text="@string/_12hr"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.528" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+</android.support.constraint.ConstraintLayout>

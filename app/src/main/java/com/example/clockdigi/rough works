@@ -1,0 +1,59 @@
+
+
+
+for (current_bg = 0; current_bg < screen.length; current_bg++) {
+                        Log.d("value", String.valueOf(screen[current_bg]));
+                        parent.setBackgroundResource(screen[current_bg]);
+                    }
+
+
+
+                    //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    //            pinkColorB1.setForeground(getResources().getDrawable(R.color.pinkish));
+                    //        }
+                    //        colorSet(pinkColorB1, pinkColorText);
+                    //
+                            //pinkColorB1.setPressed(!pinkColorB1.isPressed());
+
+
+                            /*
+
+                                private void colorSet(Button color_Button, String colorText) {
+                                    if (color_Button.isPressed()) {
+                                        color_Button.setPressed(true);
+
+                                    } else {
+                                        editor.putString(EACH_COLOR_SELECT, null);
+                                        editor.commit();
+                                    }
+                                }
+                            */
+
+    /*  if (color_selected != null)
+               if (color_selected.equals(pinkColorText)) {
+                   pinkColorB1.setBackgroundResource(R.drawable.button_background_pressed);
+               } else {
+                   pinkColorB1.setBackgroundResource(R.drawable.button_background);
+               }
+               if (color_selected.equals(brickColorText)) {
+                   brickColorB2.setBackgroundResource(R.drawable.button_background_pressed);
+               } else {
+                   brickColorB2.setBackgroundResource(R.drawable.button_background);
+               }
+               if (color_selected.equals(brownColorText)) {
+                   brownColorB3.setBackgroundResource(R.drawable.button_background_pressed);
+               } else {
+                   brownColorB3.setBackgroundResource(R.drawable.button_background);
+               }
+               if (color_selected.equals(beigeColorText)) {
+                   beigeColorB4.setBackgroundResource(R.drawable.button_background_pressed);
+               } else {
+                   beigeColorB4.setBackgroundResource(R.drawable.button_background);
+               }
+               if (color_selected.equals(mustardColorText)) {
+                   mustardColorB5.setBackgroundResource(R.drawable.button_background_pressed);
+               } else {
+                   mustardColorB5.setBackgroundResource(R.drawable.button_background);
+               }
+           }
+   */
