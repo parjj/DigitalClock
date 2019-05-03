@@ -5,8 +5,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Display;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -16,7 +18,10 @@ import android.widget.Switch;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class Settings extends AppCompatActivity implements View.OnClickListener {
 
@@ -42,7 +47,7 @@ public class Settings extends AppCompatActivity implements View.OnClickListener 
     private static final String EACH_COLOR_SELECT = "each color";
     private static final String BOOLEAN_RESULT = "boolean value";
     private static final String SHARED_KEY = "digital clock";
-    private static  String pinkColorText= null,brickColorText = null, brownColorText = null, beigeColorText = null, mustardColorText = null;
+    private static String pinkColorText = null, brickColorText = null, brownColorText = null, beigeColorText = null, mustardColorText = null;
     private HashMap<View, Boolean> colorButtonStatus;
     private HashMap<Button, String> colorButtonText;
 
@@ -130,7 +135,7 @@ public class Settings extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
 
-        buttonDeselect(v);
+       // buttonDeselect(v);
         selectStatus(v);
 
     }
@@ -149,76 +154,44 @@ public class Settings extends AppCompatActivity implements View.OnClickListener 
         colorButtonStatus.put(view, !colorButtonStatus.get(view));
 
         String colorText = colorButtonText.get(view);
+
         if (colorButtonStatus.get(view)) {
-            view.setBackgroundResource(R.drawable.button_background_pressed);
-        } else {
-            view.setBackgroundResource(R.drawable.button_background);
-        }
 
-        editor.putString(EACH_COLOR_SELECT, colorText);
-        editor.commit();
+            for(View vw : colorButtonStatus.keySet()){
+                if(view.equals(vw)) {
+                    view.setBackgroundResource(R.drawable.button_background_pressed);
+                }else{
+                    vw.setBackgroundResource(R.drawable.button_background);
+                }
+                }
+            } else {
+                view.setBackgroundResource(R.drawable.button_background);
+            }
 
-        timeZoneIntent = new Intent(this, MainActivity.class);
-        timeZoneIntent.putExtra(COLOR_SELECT, colorText);
-        setResult(RESULT_OK, timeZoneIntent);
-
-
-    }
-
-    public void buttonDeselect(View v) {
-        switch (v.getId()) {
-            case R.id.b1:
-                brickColorB2.setBackgroundResource(R.drawable.button_background);
-                brownColorB3.setBackgroundResource(R.drawable.button_background);
-                beigeColorB4.setBackgroundResource(R.drawable.button_background);
-                mustardColorB5.setBackgroundResource(R.drawable.button_background);
-                break;
-            case R.id.b2:
-                pinkColorB1.setBackgroundResource(R.drawable.button_background);
-                brownColorB3.setBackgroundResource(R.drawable.button_background);
-                beigeColorB4.setBackgroundResource(R.drawable.button_background);
-                mustardColorB5.setBackgroundResource(R.drawable.button_background);
-
-                break;
-            case R.id.b3:
-
-                brickColorB2.setBackgroundResource(R.drawable.button_background);
-                pinkColorB1.setBackgroundResource(R.drawable.button_background);
-                beigeColorB4.setBackgroundResource(R.drawable.button_background);
-                mustardColorB5.setBackgroundResource(R.drawable.button_background);
-                break;
-            case R.id.b4:
-
-                brickColorB2.setBackgroundResource(R.drawable.button_background);
-                brownColorB3.setBackgroundResource(R.drawable.button_background);
-                pinkColorB1.setBackgroundResource(R.drawable.button_background);
-                mustardColorB5.setBackgroundResource(R.drawable.button_background);
-                break;
-            case R.id.b5:
-                brickColorB2.setBackgroundResource(R.drawable.button_background);
-                brownColorB3.setBackgroundResource(R.drawable.button_background);
-                beigeColorB4.setBackgroundResource(R.drawable.button_background);
-                pinkColorB1.setBackgroundResource(R.drawable.button_background);
-                break;
-
-        }
-
-    }
-
-    //switch works
-    public void switchCall(View view) {
-
-        if (aSwitch.isChecked()) {
-            editor.putBoolean(BOOLEAN_RESULT, true);
+            editor.putString(EACH_COLOR_SELECT, colorText);
             editor.commit();
-        } else {
-            editor.putBoolean(BOOLEAN_RESULT, false);
-            editor.commit();
+
+            timeZoneIntent = new Intent(this, MainActivity.class);
+            timeZoneIntent.putExtra(COLOR_SELECT, colorText);
+            setResult(RESULT_OK, timeZoneIntent);
+
+
         }
-    }
+
+        //switch works
+        public void switchCall (View view){
+
+            if (aSwitch.isChecked()) {
+                editor.putBoolean(BOOLEAN_RESULT, true);
+                editor.commit();
+            } else {
+                editor.putBoolean(BOOLEAN_RESULT, false);
+                editor.commit();
+            }
+        }
 
 
-    private void savedStates() {
+        private void savedStates () {
 
             boolean switch_value = sharedPreferences.getBoolean(BOOLEAN_RESULT, false);
             aSwitch.setChecked(switch_value);
@@ -264,4 +237,4 @@ public class Settings extends AppCompatActivity implements View.OnClickListener 
         }
 
 
-}
+    }
